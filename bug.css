@@ -1,0 +1,13 @@
+The following CSS code snippet attempts to style a list item using the `:nth-child` pseudo-class selector. However, it contains an error resulting in unexpected styling behavior.
+
+```css
+li:nth-child(2n) { /* Selects every other list item starting from the second one. */
+  background-color: #f0f0f0;
+}
+```
+
+The error occurs when targeting even-numbered list items using `2n`.  The selector works as expected for most cases. The bug appears subtly when using very large list items (hundreds of entries).
+
+In cases with hundreds of list items, the selector unexpectedly stops applying the background color after a certain point. The behavior seems to vary slightly depending on the browser and the total number of list items. It's likely related to performance optimization or browser limitations when handling large numbers of elements with `:nth-child` and complex selectors.
+
+This type of error often goes unnoticed until the application encounters a large dataset.
